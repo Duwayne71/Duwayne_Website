@@ -1,0 +1,127 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #a3d5ff, #eaf6ff);
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  background-color: #3daffb;
+  color: white;
+  padding: 13px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2c3e50;
+}
+
+h2 {
+  color: #2c3e50;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  margin: 4px 0;
+  font-size: 0.95em;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.activity {
+  margin-bottom: 10px;
+}
+
+ .home-icon-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  padding: 3px;
+  background-color: #0077b6;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #0077b6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-icon-button img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
+}
+
+.home-icon-button:hover {
+  background-color: #00b4d8;
+  box-shadow: 0 0 15px #00e0ff, 0 0 30px #00e0ff;
+  transform: scale(1.1);
+}
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}
+
+footer {
+  background-color: #3daffb;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #e0f7fa;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}

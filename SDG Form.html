@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SDG's Registration Form</title>
+  <link rel="stylesheet" href="SDG Form styles.css">
+
+</head>
+ 
+<body style="background-image: linear-gradient(to bottom right, rgb(69, 142, 238), rgb(159, 218, 245));">
+ 
+  <a href="index.html" class="home-icon-button" title="Back to Home">
+    <img src="home icon.png" alt="Home">
+  </a>
+ 
+  <div class="form">
+    <h1><center><strong>SDG Form</strong></center></h1>
+ 
+    <form>
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" required>
+ 
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+ 
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+ 
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
+        <option value="">Select...</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="nonbinary">Non-Binary</option>
+        <option value="transmale">Trans Male</option>
+        <option value="transfemale">Trans Female</option>
+        <option value="agender">Agender</option>
+        <option value="prefer_not_to_say">Prefer not to say</option>
+      </select>
+ 
+      <fieldset>
+        <legend>SDG(s):</legend>
+        <label><input type="checkbox" name="sdgs" value="no_poverty"> No Poverty</label><br>
+        <label><input type="checkbox" name="sdgs" value="zero_hunger"> Zero Hunger</label><br>
+        <label><input type="checkbox" name="sdgs" value="good_health_and_well_being"> Good Health and Well Being</label><br>
+        <label><input type="checkbox" name="sdgs" value="quality_education"> Quality Education</label><br>
+        <label><input type="checkbox" name="sdgs" value="gender_equality"> Gender Equality</label><br>
+        <label><input type="checkbox" name="sdgs" value="clean_water_and_sanitation"> Clean Water and Sanitation</label><br>
+        <label><input type="checkbox" name="sdgs" value="affordable_and_clean_energy"> Affordable and Clean Energy</label><br>
+        <label><input type="checkbox" name="sdgs" value="decent_work_and_economic_growth"> Decent Work and Economic Growth</label><br>
+        <label><input type="checkbox" name="sdgs" value="industry,_innovation_and_infrastructure"> Industry, Innovation and Infrastructure</label><br>
+        <label><input type="checkbox" name="sdgs" value="reduced_inequalities"> Reduced Inequalities</label><br>
+        <label><input type="checkbox" name="sdgs" value="sustainable_cities_and_communities"> Sustainable Cities and Communities</label><br>
+        <label><input type="checkbox" name="sdgs" value="responsible_consumption_and_production"> Responsible Consumption and Production</label><br>
+        <label><input type="checkbox" name="sdgs" value="climate_action"> Climate Action</label><br>
+        <label><input type="checkbox" name="sdgs" value="life_below_water"> Life Below Water</label><br>
+        <label><input type="checkbox" name="sdgs" value="life_on_land"> Life on Land</label><br>
+        <label><input type="checkbox" name="sdgs" value="peace,_justice_and_strong_institutions"> Peace, Justice and Strong Institutions</label><br>
+        <label><input type="checkbox" name="sdgs" value="partnerships-for_the_goals"> Partnerships for the Goals</label><br>
+      </fieldset>
+ 
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

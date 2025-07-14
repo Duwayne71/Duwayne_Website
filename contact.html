@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact - Duwayne Jan A. Ruiz</title>
+  <meta name="description" content="Contact page for Duwayne Jan A. Ruiz. Send feedback or questions using the form.">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Contact Me</h1>
+    <nav aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Resume.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Got some questions?</h2>
+      <p>If you have any inquiries, please fill out the form or use the information below.</p>
+
+      <ul class="contact-info">
+        <li><strong>Email:</strong> ruizduwayne7@gmail.com</li>
+        <li><strong>Contact No.:</strong> 0961-423-0481</li>
+        <li><strong>Facebook:</strong> @duwaynejan.ruiz</li>
+      </ul>
+
+      <form id="contactForm" class="contact-form">
+        <div class="name-fields">
+          <div>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com">
+
+        <label for="message">Your Feedback:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <div style="text-align: center;">
+          <button type="submit" class="glow-button" style="display: inline-block;">Send Feedback</button>
+        </div>
+        <p id="errorMsg"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Duwayne Jan Ruiz || All rights reserved</p>
+  </footer>
+
+  <script>
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzDnzYSgp1JljpltCzJOqEFBbfbURqYbYKOl493z7bRk8AGLv8K8v-km3l7WHXno5dv/exec";
+    const form = document.getElementById("contactForm");
+    const responseMsg = document.getElementById("errorMsg");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      
+      const formData = new URLSearchParams();
+      formData.append("firstName", form.firstName.value);
+      formData.append("lastName", form.lastName.value);
+      formData.append("email", form.email.value);
+      formData.append("message", form.message.value);
+
+      fetch(scriptURL, {
+        method: "POST",
+        body: formData
+      })
+      .then(() => {
+        responseMsg.textContent = "Message sent successfully!";
+        responseMsg.style.color = "green";
+        form.reset();
+      })
+      .catch(error => {
+        responseMsg.textContent = "Error sending message.";
+        responseMsg.style.color = "red";
+        console.error("Error!", error.message);
+      });
+    });
+
+    const overlay = document.createElement("div");
+    overlay.id = "transition-overlay";
+    document.body.appendChild(overlay);
+
+    document.querySelectorAll("a").forEach(link => {
+      if (link.getAttribute("href") && !link.getAttribute("href").startsWith("#") && link.getAttribute("target") !== "_blank") {
+        link.addEventListener("click", function(e) {
+          e.preventDefault();
+          overlay.style.opacity = "1";
+          setTimeout(() => {
+            window.location.href = this.href;
+          }, 600);
+        });
+      }
+    });
+
+    // Fade-in on load
+    document.body.classList.add("page-fade-in");
+    setTimeout(() => {
+      document.body.classList.add("show");
+    }, 50);
+
+    const bubblesContainer = document.createElement("div");
+    bubblesContainer.classList.add("bubbles");
+    document.body.appendChild(bubblesContainer);
+
+    for (let i = 0; i < 30; i++) {
+      const bubble = document.createElement("div");
+      bubble.classList.add("bubble");
+
+      const size = Math.random() * 40 + 10;
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+
+      bubble.style.left = `${Math.random() * 100}%`;
+      bubble.style.animationDuration = `${5 + Math.random() * 10}s`;
+      bubble.style.animationDelay = `${Math.random() * 5}s`;
+
+      bubble.style.opacity = `${0.5 + Math.random() * 0.5}`;
+
+      bubblesContainer.appendChild(bubble);
+    }
+  </script>
+</body>
+</html>
