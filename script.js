@@ -59,3 +59,35 @@ document.body.classList.add("page-fade-in");
 setTimeout(() => {
   document.body.classList.add("show");
 }, 50);
+
+
+window.addEventListener("load", () => {
+  const overlay = document.getElementById("blizzard-overlay");
+
+  // Create 100 snowflakes
+  for (let i = 0; i < 100; i++) {
+    const flake = document.createElement("div");
+    flake.classList.add("snowflake");
+
+    const size = Math.random() * 8 + 2; // size between 2px and 10px
+    flake.style.width = `${size}px`;
+    flake.style.height = `${size}px`;
+
+    flake.style.left = `${Math.random() * 100}%`;
+    flake.style.top = `-${size}px`;
+
+    flake.style.animationDuration = `${1 + Math.random() * 2}s`;
+    flake.style.animationDelay = `${Math.random()}s`;
+
+    overlay.appendChild(flake);
+  }
+
+  // After 3 seconds, fade out the overlay
+  setTimeout(() => {
+    overlay.style.transition = "opacity 1s ease";
+    overlay.style.opacity = "0";
+    setTimeout(() => {
+      overlay.remove();
+    }, 1000);
+  }, 3000);
+});

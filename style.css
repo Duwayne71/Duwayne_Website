@@ -237,3 +237,35 @@ body.page-fade-in.show {
 .contact-info li {
   margin-bottom: 10px;
 }
+
+#blizzard-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: transparent;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: blizzardFall 2s linear forwards;
+}
+
+@keyframes blizzardFall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh) translateX(50vw) rotate(720deg);
+    opacity: 0;
+  }
+}

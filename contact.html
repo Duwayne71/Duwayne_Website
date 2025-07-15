@@ -90,23 +90,27 @@
       });
     });
 
+
     const overlay = document.createElement("div");
     overlay.id = "transition-overlay";
     document.body.appendChild(overlay);
 
-    document.querySelectorAll("a").forEach(link => {
-      if (link.getAttribute("href") && !link.getAttribute("href").startsWith("#") && link.getAttribute("target") !== "_blank") {
-        link.addEventListener("click", function(e) {
-          e.preventDefault();
-          overlay.style.opacity = "1";
-          setTimeout(() => {
-            window.location.href = this.href;
-          }, 600);
-        });
-      }
-    });
+    const links = document.querySelectorAll("a");
 
-    // Fade-in on load
+    for (let i = 0; i < links.length; i++) {
+    const link = links[i];
+    if (link.getAttribute("href") && !link.getAttribute("href").startsWith("#") && link.getAttribute("target") !== "_blank") {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      overlay.style.opacity = "1";
+      setTimeout(() => {
+        window.location.href = this.href;
+      }, 600);
+    });
+  }
+}
+
+
     document.body.classList.add("page-fade-in");
     setTimeout(() => {
       document.body.classList.add("show");
